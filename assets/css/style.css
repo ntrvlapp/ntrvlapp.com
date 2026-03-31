@@ -503,6 +503,12 @@ a:hover { text-decoration: underline; }
 
 .blog-post__content a.btn {
   margin-top: var(--space-sm);
+  color: #FFFFFF;
+}
+
+.blog-post__content p:has(a.btn) {
+  text-align: center;
+  margin-top: var(--space-lg);
 }
 
 /* --------------------------------------------------------
