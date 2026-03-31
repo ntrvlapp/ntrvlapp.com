@@ -27,7 +27,7 @@
         <a href="/" class="wordmark"><img src="../assets/images/ntrvl-icon.png" alt="" class="wordmark__icon" height="32"><img src="../assets/images/ntrvl-logo-wordmark.png" alt="Ntrvl" height="28"></a>
         <nav aria-label="Main navigation">
           <ul class="site-nav">
-            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/blog/post?p=why-i-built-ntrvl">Blog</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
         </nav>
@@ -37,7 +37,7 @@
     <main class="blog-post">
       <div class="wrap">
         <header>
-          <p><a href="/blog/" style="color: var(--text-muted); font-size: 13px;">&larr; Back to blog</a></p>
+          <p><a href="/blog/post?p=why-i-built-ntrvl" style="color: var(--text-muted); font-size: 13px;">&larr; Back to blog</a></p>
           <h1 class="page-title" id="post-title" style="margin-top: var(--space-sm);"></h1>
           <p class="meta" id="post-date"></p>
         </header>
@@ -69,7 +69,7 @@
 
       if (!slug || !/^[\w-]+$/.test(slug)) {
         document.getElementById('post-title').textContent = 'Post not found';
-        document.getElementById('post-content').innerHTML = '<p><a href="/blog/">Back to blog</a></p>';
+        document.getElementById('post-content').innerHTML = '<p><a href="/blog/post?p=why-i-built-ntrvl">Back to blog</a></p>';
         return;
       }
 
@@ -107,10 +107,17 @@
 
           var content = lines.slice(contentStart).join('\n');
           document.getElementById('post-content').innerHTML = marked.parse(content);
+
+          // Style App Store links as buttons
+          var contentEl = document.getElementById('post-content');
+          var links = contentEl.querySelectorAll('a[href*="apps.apple.com"]');
+          links.forEach(function(link) {
+            link.classList.add('btn', 'btn--primary');
+          });
         })
         .catch(function() {
           document.getElementById('post-title').textContent = 'Post not found';
-          document.getElementById('post-content').innerHTML = '<p><a href="/blog/">Back to blog</a></p>';
+          document.getElementById('post-content').innerHTML = '<p><a href="/blog/post?p=why-i-built-ntrvl">Back to blog</a></p>';
         });
     })();
   </script>
