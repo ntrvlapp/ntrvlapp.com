@@ -534,7 +534,7 @@ a:hover { text-decoration: underline; }
   font-size: 13px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
