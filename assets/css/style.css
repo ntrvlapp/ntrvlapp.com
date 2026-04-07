@@ -248,12 +248,18 @@ a:hover { text-decoration: underline; }
   justify-content: center;
   gap: 20px;
   margin-bottom: var(--space-md);
+  width: 100vw;
+  max-width: 1400px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  padding: 0 var(--space-md);
+  box-sizing: border-box;
 }
 
 .screenshots__gallery figure {
   margin: 0;
-  flex: 0 1 220px;
-  max-width: 220px;
+  flex: 0 1 440px;
+  max-width: 440px;
 }
 
 .screenshots__gallery img {
